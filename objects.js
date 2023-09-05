@@ -70,3 +70,17 @@ do {
     i++;
 }while (i<5)
 console.log(i, aye)
+// let --- scope is limited to the block statement declraed with
+function checkScope(){
+    "use strict"// checks common coding mistakes and unsafe action
+    let i = "function scope"
+    if (true){
+        let i = "block scope"
+        console.log("Block scope i is :" , i );
+        }
+    console.log("Block scope i is :" , i );
+    return i;
+
+
+}
+checkScope()

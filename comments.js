@@ -10,7 +10,7 @@ let myName = "Madesh";
 var b = 2;
 console.log(a);
 a= 7;
-b=a;
+var b=a; // when declared using let, this will bring an error
 console.log(b);
 var sum = 10 + 10;
 console.log(sum)
@@ -83,4 +83,36 @@ console.log(frog);
 console.log(crocodile);
 console.log(ourDog);
 
-  
+  //parse int function
+  function diablo(str){
+    return parseInt(str);
+
+  }
+console.log("56");
+//radix function
+function diaablo(str){
+    return parseInt(str, 2);
+
+  }
+console.log("10011");
+
+//ternary operator -- condition? statement-if-true:statement-if-false;
+ function checkEqual(a, b){
+    return a===b ? true:false;
+ } 
+ console.log(checkEqual(1,2));
+ function checkSign(num){
+    return num>0? "positive": num<0 ? "negative":"zero"
+ }
+ console.log(checkSign(9));
+
+ const s = [5,6,7];
+ function edit(){
+    "use strict"
+    s[0]=2;
+    s[1]=3;
+    s[2]=10;
+    return s;
+ }
+ console.log(edit());
+ console.log(s);
