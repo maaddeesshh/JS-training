@@ -83,5 +83,4 @@ console.log(frog);
 console.log(crocodile);
 console.log(ourDog);
 
-
- 
+  
