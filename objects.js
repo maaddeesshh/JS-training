@@ -84,3 +84,86 @@ function checkScope(){
 
 }
 checkScope()
+
+ //arrow function
+  var myConcat = (arr1,arr2) => arr1.concat(arr2);
+  console.log(myConcat([1,2],[3,4,5])); 
+  //rest operator (...)
+  const sum = (function(){
+    return function sum(...args) {
+        return args.reduce((a,b)=> a+b, 0);
+
+    };
+  }
+  )();
+  console.log(sum(1,2,3,4));
+//spread operator...same as rest operator but it speads/expands an already existing array
+// const arr1 = ['Jan', 'Feb','mARCH','APRIL','MAY'];
+// let arr2;
+// (function(){
+//     arr2 =arr1;
+//     arr1[0] = 'potato'
+// }
+// )();
+// console.log(arr2);
+
+
+const arr1 = ['Jan', 'Feb','mARCH','APRIL','MAY'];
+let arr2;
+(function(){
+    arr2 =[...arr1];
+    arr1[0] = 'potato'
+}
+)();
+console.log(arr2);
+// Destructing an assignment
+var voxel = { x:3.6, y:4.2,z:8.9};
+var x = voxel.x;
+var y = voxel.y;
+var z= voxel.z;//old way
+
+const {x:a,y:b,z:c} = voxel;//new way.. get the field of x from object voxel and copy to value a
+
+const AVG_TEMP = {
+    today : 77.5,
+    tommorrow:79
+};
+function get_temp(avg){
+    "use strict"
+    const { tommorrow:leo} = avg;
+    return leo;
+
+}
+console.log(get_temp(AVG_TEMP));
+
+const TEMP = {
+    today : {MIN : 77.5, MAX : 77.9},
+    tommorrow:{ MIN : 79, MAX : 88.9}
+};
+function get_tempp(avgg){
+    "use strict"
+    const { tommorrow : { MAX: jana}} = avgg;
+    return jana;
+
+}
+console.log(get_tempp(TEMP));
+//destructring an array ---goes in order
+const [t,w, ,s]= [1,2,3,4,5,6];
+console.log(t,w,s);
+
+let alo=8,ale=9;
+(() => {
+    "use strict";
+    [alo,ale] = [ale,alo];//switch places of array elements
+
+})();
+console.log(alo,ale);
+
+//creating strings using temlate literals
+const person={
+    name : "Madegwa",
+    age: 99
+};
+  const greeting = ` hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+console.log(greeting)
